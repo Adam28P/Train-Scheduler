@@ -1,0 +1,30 @@
+form {
+    padding: 20px;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-color: #000;
+    color: white;
+}
+
+.jumbotron h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #171686 !important;
+}
+
+#search,
+#clear {
+    font-weight: bold;
+}
+
+.jumbotron h4 {
+    text-align: center;
+}
