@@ -20,10 +20,10 @@ $(document).ready(function () {
         event.preventDefault();
 
         // Code in the logic for storing and retrieving the most recent user.
-        var name = $("#trainName").val().trim();
-        var destination = $("#destination").val().trim();
-        var firstTrain = $("#firstTrain").val().trim();
-        var frequency = $("#frequency").val().trim();
+        var name = $("#trainName-input").val().trim();
+        var destination = $("#destination-input").val().trim();
+        var firstTrain = $("#firstTrain-input").val().trim();
+        var frequency = $("#frequency-input").val().trim();
 
         if (name !== "" && destination !== "" && firstTrain !== "" && frequency !== "") {
             database.ref().push({
@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 
         firebase.database().ref().orderByChild("dateAdded").limit(1).on("child_added", function (childSnapshot) {
-            var tableData = $("<tr><td>" + childSnapshot.val().name + "</td><td>" + childSnapshot.val().destination + "</td><td>" + childSnapshot.val().frequency + "</td><td>tbd</td><td>tbd</td></tr>");
+            var tableData = $("<tr><td>" + childSnapshot.val().name + "</td><td>" + childSnapshot.val().destination + "</td><td>" + childSnapshot.val().frequency + "</td><td>TBD</td><td>TBD</td></tr>");
             $("#trainScheduleData").append(tableData);
 
         });
@@ -49,7 +49,7 @@ $(document).ready(function () {
     })
 
     firebase.database().ref().orderByChild("dateAdded").on("child_added", function (childSnapshot) {
-        var tableData1 = $("<tr><td>" + childSnapshot.val().name + "</td><td>" + childSnapshot.val().destination + "</td><td>" + childSnapshot.val().frequency + "</td><td>tbd</td><td>tbd</td></tr>");
+        var tableData1 = $("<tr><td>" + childSnapshot.val().name + "</td><td>" + childSnapshot.val().destination + "</td><td>" + childSnapshot.val().frequency + "</td><td>TBD</td><td>TBD</td></tr>");
         $("#trainScheduleData").append(tableData1);
     })
 
